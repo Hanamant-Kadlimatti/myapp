@@ -1,26 +1,4 @@
-import {
-    GET_PRODUCTS,
-    GET_PRODUCTS_SUCCESS,
-    GET_PRODUCTS_FAILURE,
-    // GET_PRODUCT,
-    // GET_PRODUCT_FAILURE,
-    // GET_PRODUCT_SUCCESS,
-    // ADD_PRODUCT,
-    // ADD_PRODUCT_SUCCESS,
-    // ADD_PRODUCT_FAILURE
-} from "../actionTypes/product";
-
-// export const GET_PRODUCTS = 'GET_PRODUCTS'
-// export const GET_PRODUCTS_SUCCESS = 'GET_PRODUCTS_SUCCESS'
-// export const GET_PRODUCTS_FAILURE = 'GET_PRODUCTS_FAILURE'
-
-// export const ADD_PRODUCT = 'ADD_PRODUCT'
-// export const ADD_PRODUCT_SUCCESS = 'ADD_PRODUCT_SUCCESS'
-// export const ADD_PRODUCT_FAILURE = 'ADD_PRODUCT_FAILURE'
-
-// export const GET_PRODUCT = 'GET_PRODUCT'
-// export const GET_PRODUCT_SUCCESS = 'GET_PRODUCT_SUCCESS'
-// export const GET_PRODUCT_FAILURE = 'GET_PRODUCT_FAILURE'
+import {GET_PRODUCTS,  GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE, SEARCH_PRODUCT} from "../actionTypes/product";
 
 export function getProducts(page, limit) {
     return {
@@ -44,44 +22,13 @@ export function getProductsFailure(error) {
     }
 }
 
-// export function getProduct(id) {
-//     return {
-//         type: GET_PRODUCT,
-//         id
-//     }
-// }
+//Searching products
 
-// export function getProductSuccess(product) {
-//     return {
-//         type: GET_PRODUCT_SUCCESS,
-//         product
-//     }
-// }
-
-// export function getProductFailure(error) {
-//     return {
-//         type: GET_PRODUCT_FAILURE,
-//         error
-//     }
-// }
-
-// export function addProduct(product) {
-//     return {
-//         type: ADD_PRODUCT,
-//         product
-//     }
-// }
-
-// export function addProductSuccess(product) {
-//     return {
-//         type: ADD_PRODUCT_SUCCESS,
-//         product
-//     }
-// }
-
-// export function addProductFailure(error) {
-//     return {
-//         type: ADD_PRODUCT_FAILURE,
-//         error
-//     }
-// }
+export function searchAllProductList(products, productsName) {
+    return {
+      type: SEARCH_PRODUCT,
+      products: products,
+      productsName: productsName
+    };
+  }
+  

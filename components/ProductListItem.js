@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Button,
-  Alert
-} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, Button, Alert} from "react-native";
 
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
@@ -51,7 +41,7 @@ class ProductListItem extends React.PureComponent {
               <Ionicons
                 name={wish ? "md-heart" : "md-heart-outline"}
                 size={32}
-                color="#00ff80"
+                color= "red" 
                 style={{ marginRight: 10 }}
                 hitSlop={{ top: 40, left: 40, right: 40, bottom: 40 }}
                 onPress={() => onWishTapped(id)}
@@ -59,7 +49,7 @@ class ProductListItem extends React.PureComponent {
             </View>
             <View style={styles.rating}>
               <Text style={{ color: "#fff", marginRight: 4 }}>{rating || "NA"}</Text>
-              <Ionicons name="md-star" size={12} color="#fff" />
+              <Ionicons name="md-star" size={12} color="#fff" /> 
             </View>
             <View style={styles.price}>
               <FontAwesome name="rupee" size={16} color="#000" />
@@ -100,7 +90,7 @@ const styles = StyleSheet.create({
   },
   rating: {
     borderRadius: 5,
-    backgroundColor: "#0040ff",
+    backgroundColor: "green",  
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "flex-start",

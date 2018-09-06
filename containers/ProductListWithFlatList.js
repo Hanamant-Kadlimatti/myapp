@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import ProductListItem from "../components/ProductListItem";
-import {
-  ActivityIndicator,
-  FlatList,
-  RefreshControl,
-  Alert,
-  View
-} from "react-native";
+import {ActivityIndicator, FlatList, RefreshControl, Alert, View} from "react-native";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as productActionCreators from "../actionCreators/product";
+
 let URI = "http://10.110.60.74:4000";
 class ProductListWithFlatList extends Component {
   constructor(props) {
@@ -22,19 +17,11 @@ class ProductListWithFlatList extends Component {
   }
 
   onWishTapped = id => {
-    // TODO: when user taps on the heart icon, you 
-    // need to change the icon to full heart, which is 
-    // already handled in ProductListItem based on wish property
-    // you need to set the wish property to true for the tapped product
-    // which is already in the state
-    // implement above using react redux
   };
 
-  _getProducts = (page = 1, limit = 8) => {
+  _getProducts = (page = 1, limit = 40) => {
     this.props.actions.getProducts(page, limit);
   };
-
-  /*  flat list supporting methods */
 
   _getMore = () => {
     this._getProducts(++this.props.page, this.props.limit);
@@ -84,6 +71,7 @@ class ProductListWithFlatList extends Component {
     this.props.products.sort(function(low, high){
         return high.price-low.price
     })
+
     return (
       <View style={{flex:1,backgroundColor:'#fff'}}>
         {this.props.isLoading ? (

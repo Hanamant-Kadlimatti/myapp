@@ -4,7 +4,6 @@ import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator } from "re
 let URI = "http://10.110.60.74:4000";
 
 class ProductDetail extends React.Component {
-  //static navigationOptions = { title: "Product Detail" };
   static navigationOptions = ({ navigation }) => ({
     title: `Product Detail for ${navigation.state.params.id}`
   });

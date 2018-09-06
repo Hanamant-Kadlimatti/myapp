@@ -1,9 +1,4 @@
-import {
-    GET_STORES,
-    GET_STORES_SUCCESS,
-    GET_STORES_FAILURE
-} from "../actionTypes/store";
-
+import {GET_STORES, GET_STORES_SUCCESS, GET_STORES_FAILURE} from "../actionTypes/store";
 
 export function getStores() {
     return {

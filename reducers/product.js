@@ -1,14 +1,4 @@
-import {
-    GET_PRODUCTS,
-    GET_PRODUCTS_FAILURE,
-    GET_PRODUCTS_SUCCESS,
-    // GET_PRODUCT,
-    // GET_PRODUCT_SUCCESS,
-    // GET_PRODUCT_FAILURE,
-    // ADD_PRODUCT,
-    // ADD_PRODUCT_SUCCESS,
-    // ADD_PRODUCT_FAILURE
-} from "../actionTypes/product";
+import {GET_PRODUCTS, GET_PRODUCTS_FAILURE,GET_PRODUCTS_SUCCESS,SEARCH_PRODUCT,} from "../actionTypes/product";
 
 export default (prevState = {
     products: [],
@@ -30,32 +20,26 @@ export default (prevState = {
                 isLoading: false,
                 products: prevState.products.concat(action.products)
             }
-        // case GET_PRODUCT:
-        //     return { ...prevState,
-        //         isLoading: true
-        //     }
-        // case GET_PRODUCT_SUCCESS:
-        //     return { ...prevState,
-        //         isLoading: false,
-        //         product: action.product
-        //     }
-        // case ADD_PRODUCT:
-        //     return { ...prevState,
-        //         isLoading: true,
-        //         product: action.product
-        //     }
-        // case ADD_PRODUCT_SUCCESS:
-        //     return { ...prevState,
-        //         isLoading: false,
-        //         product: action.product
-        //     }
+     
         case GET_PRODUCTS_FAILURE:
-        // case GET_PRODUCT_FAILURE:
-        // case ADD_PRODUCT_FAILURE:
             return { ...prevState,
                 isLoading: false,
                 error: action.error
             }
+
+         // Searching products   
+            case SEARCH_PRODUCT:
+            return {
+              ...prevState,
+              isLoading: false,
+              filteredAllProducts: action.products.filter(function(item) {
+                return (
+                  item.title.toLowerCase().search(action.productsName.toLowerCase()) !==
+                  -1
+                );
+              })
+            };
+
         default:
             return prevState;
 

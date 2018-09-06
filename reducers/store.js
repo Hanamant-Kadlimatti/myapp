@@ -1,8 +1,4 @@
-import {
-    GET_STORES,
-    GET_STORES_FAILURE,
-    GET_STORES_SUCCESS
-} from "../actionTypes/store";
+import {GET_STORES, GET_STORES_FAILURE, GET_STORES_SUCCESS} from "../actionTypes/store";
 
 export default (prevState={stores:[],isLoading:false}, action) => {
     switch (action.type) {

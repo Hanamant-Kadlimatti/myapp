@@ -7,8 +7,6 @@ import { connect } from "react-redux";
 import React from "react";
 
 import ProductDetail from "./ProductDetail";
-// import AddProduct from "./AddProduct";
-// import StoreMap from "./StoreMap";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons"
 import ProductListWithFlatList from "./ProductListWithFlatList";
 import SearchDetail from "./SearchDetail";
@@ -21,16 +19,13 @@ const ListStack = createStackNavigator(
     Detail: {
       screen: ProductDetail
     },
-    Search : {
-        screen : SearchDetail
-    },
   },
   {
     initialRouteName: "List",
     navigationOptions: {
       title: "Product Manager",
       headerStyle: {
-        backgroundColor: "#00ff80"
+        backgroundColor: "green"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {
@@ -54,7 +49,7 @@ const SearchStack = createStackNavigator(
       navigationOptions: {
         title: "Search Your Products",
         headerStyle: {
-          backgroundColor: "#00ff80"
+          backgroundColor: "green"
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
@@ -66,34 +61,10 @@ const SearchStack = createStackNavigator(
   );
   //Search product ends
 
-// const AddStack = createStackNavigator(
-//   {
-//     Add: {
-//       screen: AddProduct
-//     }
-//   },
-//   {
-//     initialRouteName: "Add",
-//     navigationOptions: {
-//       title: "Manage",
-//       headerStyle: {
-//         backgroundColor: "#00ff80"
-//       },
-//       headerTintColor: "#fff",
-//       headerTitleStyle: {
-//         fontWeight: "bold",
-//         textAlign: "center"
-//       }
-//     }
-//   }
-// );
-
 export const AppNavigator = createBottomTabNavigator(
   {
     List: ListStack,
     Search : SearchStack,
-    // Add: AddStack,
-    // Stores: StoreMap
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -114,14 +85,12 @@ export const AppNavigator = createBottomTabNavigator(
           );
         }
 
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
         return <Ionicons name={iconName} size={30} color={tintColor} />;
         <Ionicons name={iconName} size={30} color={tintColor} />;
       }
     }),
     tabBarOptions: {
-      activeTintColor: "#00ff80",
+      activeTintColor: "green", 
       inactiveTintColor: "gray"
     }
   }
