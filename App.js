@@ -11,7 +11,7 @@
 import React from "react";
 import { createStore, applyMiddleware } from "redux";
 import { Provider, connect } from "react-redux";
-import AppWithNavigationState, { middleware } from "./containers/AppNavigator";
+import AppWithNavigationState, { middleware } from "./containers/Navigator";
 import rootReducer from "./reducers";
 import createSagaMiddleware from "redux-saga";
 import {productWatchers} from "./sagas/product";

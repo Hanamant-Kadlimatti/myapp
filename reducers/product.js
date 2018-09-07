@@ -6,7 +6,7 @@ export default (prevState = {
     isLoading: false,
     isRefreshing: false,
     page: 1,
-    limit: 8
+    limit: 40
 }, action) => {
     console.log(action.type);
     switch (action.type) {

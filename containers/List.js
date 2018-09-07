@@ -7,7 +7,7 @@ import { bindActionCreators } from "redux";
 import * as productActionCreators from "../actionCreators/product";
 
 let URI = "http://10.110.60.74:4000";
-class ProductListWithFlatList extends Component {
+class List extends Component {
   constructor(props) {
     super(props);
   }
@@ -47,7 +47,6 @@ class ProductListWithFlatList extends Component {
   };
 
   _onRefresh = () => {
-    //this.setState({ isRefreshing: true });
     this._getProducts();
   };
 
@@ -63,7 +62,6 @@ class ProductListWithFlatList extends Component {
     );
   }
 
-  /*  flat list supporting methods - END */
 
   render() {
 
@@ -108,5 +106,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  ProductListWithFlatList
+  List
 );

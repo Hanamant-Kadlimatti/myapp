@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, Button, Alert} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity,} from "react-native";
 
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
@@ -17,7 +17,7 @@ class ProductListItem extends React.PureComponent {
       onWishTapped
     } = this.props;
     return (
-      <TouchableOpacity
+      <View
         activeOpacity={0.5}
         onPress={() => {
           console.log("Navigating to detail for id ", id);
@@ -59,7 +59,7 @@ class ProductListItem extends React.PureComponent {
             </View>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   }
 }

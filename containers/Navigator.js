@@ -6,19 +6,16 @@ import {
 import { connect } from "react-redux";
 import React from "react";
 
-import ProductDetail from "./ProductDetail";
+// import ProductDetail from "./ProductDetail";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons"
-import ProductListWithFlatList from "./ProductListWithFlatList";
-import SearchDetail from "./SearchDetail";
+import List from "./List";
+import Search from "./Search";
 
 const ListStack = createStackNavigator(
   {
     List: {
-      screen: ProductListWithFlatList
-    },
-    Detail: {
-      screen: ProductDetail
-    },
+      screen: List
+    }
   },
   {
     initialRouteName: "List",
@@ -41,7 +38,7 @@ const ListStack = createStackNavigator(
 const SearchStack = createStackNavigator(
     { 
       Search : {
-          screen : SearchDetail
+          screen : Search
       },
     },
     {
@@ -61,7 +58,7 @@ const SearchStack = createStackNavigator(
   );
   //Search product ends
 
-export const AppNavigator = createBottomTabNavigator(
+export const Navigator = createBottomTabNavigator(
   {
     List: ListStack,
     Search : SearchStack,
@@ -105,7 +102,7 @@ const addListener = createReduxBoundAddListener("root");
 class App extends React.Component {
   render() {
     return (
-      <AppNavigator
+      <Navigator
         navigation={{
           dispatch: this.props.dispatch,
           state: this.props.navState,
